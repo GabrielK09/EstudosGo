@@ -1,5 +1,6 @@
 package main
 
+<<<<<<< HEAD
 import "fmt"
 
 func closure() func() {
@@ -20,3 +21,8 @@ func main() {
 	newFunc()
 
 }
+=======
+func main() {
+
+}
+>>>>>>> 686038d95814ea60fe1645f6ced9004428a9a07e

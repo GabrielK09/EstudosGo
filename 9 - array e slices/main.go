@@ -9,6 +9,7 @@ func main() {
 	array[1] = "position 1"
 
 	fmt.Println(array)
+
 	// --
 
 	// Já definindo
