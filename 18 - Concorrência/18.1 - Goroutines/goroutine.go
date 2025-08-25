@@ -6,7 +6,8 @@ import (
 )
 
 func main() {
-	write("Linha 9")
+	// Resumindo isto vai rodar a próxima linha mesmo que aonde foi definido go, não tenha 'terminado', onde o write é um texto infinito, mas assim, vai ser feito os 2 da mesma forma, e assim vai levar em conta também ao número de nú
+	go write("Linha 9") // Vai fazer uma linha, faz a outra, faz a outra,
 	write("Linha 10")
 
 }
