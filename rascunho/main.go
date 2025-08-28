@@ -1,15 +1,32 @@
 package main
 
-import "fmt"
+import (
+	"fmt"
+	"sync"
+	"time"
+)
 
-func main() {
-	ch := make(chan string)
-	go myChannel(ch)
+func count(name string) {
+	for i := 0; i < 5; i++ {
+		fmt.Printf("Nome: %s\n", name)
+		time.Sleep(500 * time.Millisecond)
 
-	msg := <-ch
-	fmt.Println(msg)
+	}
 }
 
-func myChannel(channel chan string) {
-	channel <- "Meu canal"
+func main() {
+	var wg sync.WaitGroup
+	wg.Add(5)
+
+	go func() {
+		count("Chamada 1")
+		wg.Done()
+	}()
+
+	go func() {
+		count("Chamada 2")
+		wg.Done()
+	}()
+
+	wg.Wait()
 }
